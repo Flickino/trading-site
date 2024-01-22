@@ -1,0 +1,31 @@
+h1 {
+    display: flex;
+    color: darkred;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 80vh;
+}
+img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+}
+.navi h2{
+    display: flex;
+    color: blue;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 20vh;
+    font-size:xx-large;
+}
+.navi{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
