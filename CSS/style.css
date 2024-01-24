@@ -1,31 +1,139 @@
+body {
+  margin: 0;
+  padding: 0;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer and Edge */
+  background-color: black;
+  cursor: none;
+  height: 5000px;
+}
+body::-webkit-scrollbar {
+  width: 0.5em; /* Adjust the scrollbar width as needed */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: black; /* Hide the thumb */
+}
+head {
+    background-color: black;
+}
+
+
 h1 {
-    display: flex;
-    color: darkred;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    height: 80vh;
+  color: white;
+  margin: 0; /* Remove default margin */
+  font-weight: bolder;
+  text-align: center;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  font-family: 'Josefin Sans';
+  transform: translate(-45%, -50%);
 }
+
+
+#scroll-down {
+    color: white;
+    margin-top: 20px; /* Space between h1 and the button */
+    
+}
+
+#scroll-down img {
+  width: 50px; /* Adjust as needed */
+  height: 50px; /* Adjust as needed */
+  max-width: 100%;
+  max-height: 100%;
+  animation: pulse 2s infinite ease-in-out; /* Apply the pulse animation */
+  transition: drop-shadow 0.3s ease;
+}
+
+img.main-arrow {
+  z-index:2;
+}
+img.glow-arrow {
+  z-index:1;
+  transform: scale(1.01) translate(-50%, -50%);
+  -webkit-transform: scale(1.01) translate(-50%, -50%);
+  filter: brightness(0) invert(1) blur(5px);
+  -webkit-filter: brightness(0) invert(1) blur(5px);
+  opacity:0;
+}
+img.main-arrow:hover ~ img.glow-arrow {
+  opacity:1;
+}
+
 img {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 50px;
-    width: 50px;
+  position:absolute;
+  max-height:90%;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform-origin: 0 0;
+  -webkit-transform-origin: 0 0;
 }
-.navi h2{
-    display: flex;
-    color: blue;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    height: 20vh;
-    font-size:xx-large;
+img.Logo{
+  position: absolute;
+  top: 6%;
+  left: 6%;
+  max-height: 10%;
+  max-width: 10%;
+  height: 80%;
+  width: 80%;
 }
-.navi{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
+
+.cursor {
+    width: 16px; /* Size of the cursor */
+    height: 16px; /* Size of the cursor */
+    border-radius: 50%; /* Makes it a circle */
+    background: rgba(255, 255, 255, 0.6); /* White color with opacity */
+    position: fixed; /* Keeps the cursor on top of other elements */
+    pointer-events: none; /* Ensures click events are not captured by the cursor */
+    z-index: 10000; /* Ensures the cursor is above other items */
+    transition: transform 0.05s ease-out; /* Smooth transition for the movement */
+    left: 0; /* Initial left position */
+    top: 0; /* Initial top position */
+    filter: blur(0.5px);
+  }
+
+
+  #star-container {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .star {
+    position: absolute;
+    color: white; /* Color of the symbol */
+    font-family: 'Arial', sans-serif; /* Specify the font to ensure consistent sizing */
+    animation: fly 10s linear infinite;
+  }
+  
+  .star::before {
+    content: attr(data-symbol); /* Use the symbol stored in the data-symbol attribute */
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1); /* Original size */
+    }
+    50% {
+      transform: scale(1.1); /* 10% larger */
+    }
+    100% {
+      transform: scale(1); /* Back to original size */
+    }
+  }
+  
+  /* Animation to move the stars from top to bottom */
+  @keyframes fly {
+    from {
+      transform: translateY(-10px);
+    }
+    to {
+      transform: translateY(100vh);
+    }
+  }
+  
