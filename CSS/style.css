@@ -3,9 +3,9 @@ body {
   padding: 0;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* Internet Explorer and Edge */
-  background-image: url("https://wallpapers.com/images/hd/cute-dark-a022kawmtjm4zd3a.jpg");
-  width:100%;
-  height:100%;
+  /*! Can't f!cking center the background (The image is zoomed a bit in browser)*/
+  /* TODO: background fix*/
+  background-image: url(../assets/img/Background.png);  /*<---Image from assets folder*/  /*url("https://wallpapers.com/images/hd/cute-dark-a022kawmtjm4zd3a.jpg");*/
   cursor: none;
   height: 5000px;
 }
@@ -38,7 +38,7 @@ h3{
   transform: translate(-45%, -50%);
 }
 h1 {
-  color: rgb(165, 49, 164);
+  color: #ffd700;
   margin: 0; /* Remove default margin */
   font-weight: bolder;
   text-align: center;
@@ -49,7 +49,6 @@ h1 {
   font-size: 50px;
   transform: translate(-45%, -50%);
 }
-
 
 #scroll-down {
     color: white;
@@ -81,6 +80,7 @@ img.main-arrow:hover ~ img.glow-arrow {
   opacity:1;
 }
 
+/* TODO this img specifier cannot be allowed like what the actual F@ck, like every img file to be specifieb by this really???????*/
 img {
   position:absolute;
   max-height:90%;
@@ -209,6 +209,7 @@ img.Logo{
 
 
 
+
   /* unselectable class -> keep it under this line */
   .unselectable {
     user-select: none;
@@ -216,4 +217,3 @@ img.Logo{
     -ms-user-select: none; /* Internet Explorer/Edge */
     -webkit-user-select: none; /* Chrome, Safari, and Opera */
   }
-  
